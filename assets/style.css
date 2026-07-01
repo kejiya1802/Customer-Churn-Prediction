@@ -1,0 +1,505 @@
+/* ==========================================================
+   GOOGLE FONT
+========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.stApp{
+    background:linear-gradient(180deg,#0B1120,#111827);
+    color:#F8FAFC;
+}
+
+/* ==========================================================
+   PAGE
+========================================================== */
+
+.block-container{
+    padding-top:2rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    animation:pageFade .8s ease;
+}
+
+@keyframes pageFade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+
+position:relative;
+
+overflow:hidden;
+
+padding:65px;
+
+border-radius:28px;
+
+text-align:center;
+
+color:white;
+
+margin-bottom:35px;
+
+background:linear-gradient(
+135deg,
+#2563EB,
+#7C3AED,
+#06B6D4
+);
+
+background-size:300%;
+
+animation:
+gradientMove 8s infinite linear,
+heroFade .9s ease;
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.45);
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+top:-50%;
+
+left:-50%;
+
+width:200%;
+
+height:200%;
+
+background:
+radial-gradient(circle,
+rgba(255,255,255,.15),
+transparent 60%);
+
+animation:rotateGlow 8s linear infinite;
+
+}
+
+.hero h1{
+
+font-size:48px;
+
+font-weight:800;
+
+margin-bottom:10px;
+
+}
+
+.hero h3{
+
+font-size:24px;
+
+margin-bottom:15px;
+
+font-weight:500;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+max-width:800px;
+
+margin:auto;
+
+color:white;
+
+line-height:1.7;
+
+}
+
+@keyframes gradientMove{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:300%;
+}
+
+}
+
+@keyframes rotateGlow{
+
+from{
+transform:rotate(0deg);
+}
+
+to{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes heroFade{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ==========================================================
+   CARDS
+========================================================== */
+
+.card{
+
+background:rgba(17,24,39,.85);
+
+backdrop-filter:blur(14px);
+
+padding:28px;
+
+border-radius:22px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.35);
+
+transition:.35s;
+
+overflow:hidden;
+
+position:relative;
+
+animation:cardFade .8s ease;
+
+}
+
+.card:hover{
+
+transform:
+translateY(-10px)
+scale(1.03);
+
+border-color:#7C3AED;
+
+box-shadow:
+
+0 0 20px rgba(59,130,246,.30),
+
+0 0 45px rgba(124,58,237,.35);
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:80%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.18),
+transparent
+);
+
+transition:1s;
+
+}
+
+.card:hover::before{
+
+left:150%;
+
+}
+
+.card h3{
+
+font-size:26px;
+
+margin-bottom:12px;
+
+color:white;
+
+}
+
+.card p{
+
+font-size:15px;
+
+color:#CBD5E1;
+
+line-height:1.6;
+
+}
+
+@keyframes cardFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.stButton>button{
+
+width:100%;
+
+border:none;
+
+border-radius:14px;
+
+padding:12px;
+
+font-size:16px;
+
+font-weight:600;
+
+color:white;
+
+cursor:pointer;
+
+background:
+
+linear-gradient(
+135deg,
+#2563EB,
+#7C3AED
+);
+
+transition:.35s;
+
+}
+
+.stButton>button:hover{
+
+transform:
+translateY(-3px)
+scale(1.03);
+
+box-shadow:
+
+0 0 20px rgba(59,130,246,.35),
+
+0 0 40px rgba(124,58,237,.35);
+
+}
+
+.stButton>button:active{
+
+transform:scale(.97);
+
+}
+
+/* ==========================================================
+   METRICS
+========================================================== */
+
+div[data-testid="metric-container"]{
+
+background:#161B22;
+
+padding:20px;
+
+border-radius:16px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+div[data-testid="metric-container"]:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 0 25px rgba(59,130,246,.25);
+
+}
+
+div[data-testid="stMetricValue"]{
+
+font-size:34px;
+
+font-weight:700;
+
+color:#22C55E;
+
+}
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+section[data-testid="stSidebar"]{
+
+background:#0B1120;
+
+border-right:1px solid rgba(255,255,255,.08);
+
+}
+
+section[data-testid="stSidebar"] img{
+
+animation:floatIcon 5s infinite ease-in-out;
+
+}
+
+@keyframes floatIcon{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+.stSelectbox div,
+.stNumberInput input{
+
+border-radius:12px;
+
+}
+
+/* ==========================================================
+   TABLE
+========================================================== */
+
+table{
+
+border-radius:14px;
+
+overflow:hidden;
+
+}
+
+thead{
+
+background:#2563EB;
+
+color:white;
+
+}
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#7C3AED;
+
+border-radius:30px;
+
+}
+
+/* ==========================================================
+   HIDE STREAMLIT DEFAULT MENU
+========================================================== */
+
+#MainMenu{
+visibility:hidden;
+}
+
+footer{
+visibility:hidden;
+}
+
+header{
+visibility:hidden;
+}
+
+/* Hide Streamlit's default multipage navigation */
+[data-testid="stSidebarNav"] {
+    display: none;
+}
