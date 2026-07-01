@@ -8,3 +8,6 @@ streamlit
 joblib
 shap
 streamlit-option-menu
+plotly-express
+shap
+imbalanced-learn
